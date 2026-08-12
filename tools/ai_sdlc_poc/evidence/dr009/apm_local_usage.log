@@ -1,0 +1,83 @@
+=== APM Local Installation and Validation ===
+Date: 2026-08-12 (live execution)
+APM version: 0.28.0
+Python: 3.11.9
+Platform: Windows 10/11 (x64)
+
+--- Step 1: Installation ---
+Command: pip install apm-cli (or via pipx)
+Installed version: 0.28.0
+Binary: apm.exe (on PATH)
+Status: PASS
+
+--- Step 2: apm init ---
+Command: apm init -y --target copilot
+Working directory: tools/ai_sdlc_poc/runtime/apm
+
+Output:
+  [!] apm.yml already exists
+  [i] --yes specified, overwriting apm.yml...
+  [i] Targets set: copilot (via --target flag)
+  [>] Initializing APM project: apm
+  [*] APM project initialized successfully!
+  Created Files: apm.yml
+
+Status: PASS (returncode: 0)
+
+--- Step 3: apm install ---
+Command: apm install
+Working directory: tools/ai_sdlc_poc/runtime/apm
+
+Output:
+  [>] Installing dependencies from apm.yml...
+  [i] Targets: copilot  (source: apm.yml)
+    [+] <project root> (local)
+    |-- 1 instruction(s) adopted -> .github/instructions/
+    |-- (files unchanged)
+  [i] No changes -- install state already up to date in 9.1s.
+
+Warnings:
+  WARNING: Policy repo eclipse-score/.github-private not found
+           (token lacks private-repo read scope for org policy discovery)
+  Note: This is a non-fatal warning. Public packages work without this scope.
+
+Status: PASS (returncode: 0)
+
+--- Step 4: apm lock ---
+Command: apm lock
+Output:
+  [+] Lockfile written to apm.lock.yaml
+
+Status: PASS (returncode: 0)
+
+--- Step 5: apm compile ---
+Command: apm compile -t copilot
+Output:
+  [*] Starting context compilation...
+  [i] Targets: copilot  (source: --target flag)
+  [i] Compiling for AGENTS.md + .github/copilot-instructions.md + .github/prompts/
+  [i] Instructions already in .github/instructions/ -- omitting from AGENTS.md
+  [!] AGENTS.md not generated -- .github/instructions/ already covers Copilot
+
+Status: PASS (returncode: 0)
+Note: No output files generated because .github/instructions/ already deployed.
+      Pass --force-instructions to also write AGENTS.md if needed.
+
+--- Step 6: apm audit ---
+Command: apm audit
+Output:
+  [>] Scanning installed packages and deployed files...
+  [*] 1 file(s) scanned -- no issues found
+
+Stderr:
+  [>] Replaying install (cache-only)...
+  [+] Replayed 1 package(s)
+  [>] Diffing scratch vs working tree...
+  [+] No drift detected
+
+Status: PASS (returncode: 0)
+
+=== OVERALL RESULT: PASS ===
+All six core APM commands completed successfully on developer workstation.
+No configuration of S-CORE build system was required.
+APM operates entirely at the file-system level.

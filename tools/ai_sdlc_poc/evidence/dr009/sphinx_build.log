@@ -1,0 +1,33 @@
+﻿[01mRunning Sphinx v9.0.4[39;49;00m
+[01mloading translations [en]... [39;49;00mdone
+[01mloading pickled environment... [39;49;00mThe configuration has changed (2 options: 'needs_layouts', 'needs_types')
+done
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mwriting output... [39;49;00m
+[01mbuilding [html]: [39;49;00mtargets for 0 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 0 changed, 0 removed
+[01mreading sources... [39;49;00m
+Copying static files for sphinx-data-viewer support
+Copying static files for sphinx-needs datatables support
+Copying static style files for sphinx-needs
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mno targets are out of date.[39;49;00m
+Schema validation completed with 0 warning(s) in 0.004 seconds. Validated 511 needs/s.
+[01mpreparing documents... [39;49;00mdone
+[01mcopying assets... [39;49;00m
+[01mcopying static files... [39;49;00m
+Writing evaluated template result to C:\Users\40039527\Documents\SDV repo\lifecycle\tools\ai_sdlc_poc\evidence\dr009\_sphinx_test\_build\html\_static\basic.css
+Writing evaluated template result to C:\Users\40039527\Documents\SDV repo\lifecycle\tools\ai_sdlc_poc\evidence\dr009\_sphinx_test\_build\html\_static\documentation_options.js
+Writing evaluated template result to C:\Users\40039527\Documents\SDV repo\lifecycle\tools\ai_sdlc_poc\evidence\dr009\_sphinx_test\_build\html\_static\language_data.js
+Writing evaluated template result to C:\Users\40039527\Documents\SDV repo\lifecycle\tools\ai_sdlc_poc\evidence\dr009\_sphinx_test\_build\html\_static\alabaster.css
+[01mcopying static files: [39;49;00mdone
+[01mcopying extra files... [39;49;00m
+[01mcopying extra files: [39;49;00mdone
+[01mcopying assets: [39;49;00mdone
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in ..\..\evidence\dr009\_sphinx_test\_build\html.

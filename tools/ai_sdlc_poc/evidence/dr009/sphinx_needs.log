@@ -1,0 +1,62 @@
+=== Sphinx + sphinx-needs Integration Validation ===
+Date: 2026-08-12
+Sphinx version: 9.0.4
+sphinx-needs version: 8.3.1
+Python: 3.11.9 (venv)
+Theme: alabaster
+
+--- Test Project ---
+Source: tools/ai_sdlc_poc/evidence/dr009/_sphinx_test/
+Output: tools/ai_sdlc_poc/evidence/dr009/_sphinx_test/_build/html/
+
+conf.py:
+  project = "S-CORE DR-009 PoC"
+  extensions = ["sphinx_needs"]
+  html_theme = "alabaster"
+  needs_id_regex = r"^[A-Z]+_\d{3}$"
+
+index.rst (needs defined):
+  .. req:: APM must not break Sphinx builds
+     :id: REQ_001
+     :status: open
+
+  .. spec:: APM context files reside outside Sphinx source tree
+     :id: SPEC_001
+     :status: open
+     :links: REQ_001
+
+--- Build Command ---
+python -m sphinx -b html _sphinx_test _sphinx_test/_build/html
+
+--- Build Output ---
+Running Sphinx v9.0.4
+loading translations [en]... done
+loading pickled environment... done
+building [html]: targets for 0 source files that are out of date
+updating environment: 0 added, 0 changed, 0 removed
+Schema validation completed with 0 warning(s) in 0.004 seconds.
+Validated 511 needs/s.
+build succeeded.
+
+--- Generated Files ---
+index.html              (main page with REQ_001, SPEC_001 rendered)
+schema_violations.json  (0 violations)
+genindex.html
+search.html
+
+--- sphinx-needs Behavior ---
+- REQ_001 rendered as requirement need block with id, status fields
+- SPEC_001 rendered with :links: REQ_001 traceability link
+- Schema validation: 0 warnings
+- Needs ID regex validated (REQ_001, SPEC_001 conform to ^[A-Z]+_\d{3}$)
+
+--- APM Co-existence ---
+APM files (apm.yml, apm.lock.yaml, .apm/, apm_modules/) are in a sibling
+directory to the Sphinx source tree. They are not discovered by Sphinx and
+produce no warnings or errors.
+
+=== RESULT ===
+Task 5 - Sphinx integration:       PASS
+Task 6 - sphinx-needs integration:  PASS
+
+No conflict between APM file layout and Sphinx/sphinx-needs build pipeline.

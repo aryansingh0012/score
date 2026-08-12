@@ -1,0 +1,51 @@
+# Sample GitHub Actions workflow for APM integration in S-CORE CI/CD
+# DR-009 PoC Evidence - Task 7: CI/CD Integration Validation
+#
+# This workflow demonstrates apm install + apm audit as CI/CD steps.
+# Intended for: .github/workflows/apm-context-check.yml
+
+name: APM Context Package Integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tools/ai_sdlc_poc/runtime/apm/apm.yml"
+      - "tools/ai_sdlc_poc/runtime/apm/apm.lock.yaml"
+  pull_request:
+    paths:
+      - "tools/ai_sdlc_poc/runtime/apm/apm.yml"
+      - "tools/ai_sdlc_poc/runtime/apm/apm.lock.yaml"
+
+jobs:
+  apm-verify:
+    name: Verify APM context packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install APM CLI
+        run: pip install apm-cli
+
+      - name: Verify APM version
+        run: apm --version
+
+      - name: Install packages (frozen / CI-safe)
+        working-directory: tools/ai_sdlc_poc/runtime/apm
+        run: apm install --frozen
+        # --frozen refuses to install if lockfile is missing or out of sync
+        # This is the CI-safe mode; no network writes are made.
+
+      - name: Audit deployed files for drift
+        working-directory: tools/ai_sdlc_poc/runtime/apm
+        run: apm audit
+        # apm audit scans installed packages and deployed files.
+        # Exits non-zero if drift, tampering, or policy violations are found.
+
+      - name: Upload APM lockfile as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: apm-lockfile
+          path: tools/ai_sdlc_poc/runtime/apm/apm.lock.yaml
