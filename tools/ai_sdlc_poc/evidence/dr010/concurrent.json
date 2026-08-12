@@ -1,0 +1,70 @@
+{
+  "baseline": {
+    "id": "design-baseline-v1",
+    "version": "v1",
+    "scope": "watchdog run-cycle benchmark",
+    "shared_contracts": [
+      "serviceWatchdog() is invoked during the ProcessGroupManager run cycle",
+      "all workstreams reference the same baseline contract",
+      "merge artifacts preserve baseline identity for replan analysis"
+    ],
+    "digest": "b7cf660f5c4f1878fabb2d80edfc0e9010dd7c7cc37d060ba0bc86b2bbb0d3c5"
+  },
+  "agents": [
+    {
+      "agent": "agent_a",
+      "workstream": "watchdog mocking interface",
+      "context_digest": "8b9c4108eb8533c281add8623848e3fab12b131b2c369b6eb433adf6fa20c592",
+      "baseline_id": "design-baseline-v1",
+      "baseline_digest": "b7cf660f5c4f1878fabb2d80edfc0e9010dd7c7cc37d060ba0bc86b2bbb0d3c5",
+      "artifacts": [
+        "watchdog mocking interface",
+        "design-baseline-v1"
+      ]
+    },
+    {
+      "agent": "agent_b",
+      "workstream": "watchdog behavior tests",
+      "context_digest": "8b9c4108eb8533c281add8623848e3fab12b131b2c369b6eb433adf6fa20c592",
+      "baseline_id": "design-baseline-v1",
+      "baseline_digest": "b7cf660f5c4f1878fabb2d80edfc0e9010dd7c7cc37d060ba0bc86b2bbb0d3c5",
+      "artifacts": [
+        "watchdog behavior tests",
+        "design-baseline-v1"
+      ]
+    },
+    {
+      "agent": "agent_c",
+      "workstream": "Bazel test target integration",
+      "context_digest": "8b9c4108eb8533c281add8623848e3fab12b131b2c369b6eb433adf6fa20c592",
+      "baseline_id": "design-baseline-v1",
+      "baseline_digest": "b7cf660f5c4f1878fabb2d80edfc0e9010dd7c7cc37d060ba0bc86b2bbb0d3c5",
+      "artifacts": [
+        "Bazel test target integration",
+        "design-baseline-v1"
+      ]
+    }
+  ],
+  "merge": {
+    "status": "merged",
+    "baseline_id": "design-baseline-v1",
+    "baseline_digest": "b7cf660f5c4f1878fabb2d80edfc0e9010dd7c7cc37d060ba0bc86b2bbb0d3c5",
+    "source_agents": [
+      "agent_a",
+      "agent_b",
+      "agent_c"
+    ],
+    "source_workstreams": [
+      "watchdog mocking interface",
+      "watchdog behavior tests",
+      "Bazel test target integration"
+    ],
+    "merged_artifacts": [
+      "watchdog mocking interface",
+      "design-baseline-v1",
+      "watchdog behavior tests",
+      "Bazel test target integration"
+    ],
+    "conflicts": []
+  }
+}

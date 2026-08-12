@@ -1,0 +1,5 @@
+{
+  "status": "completed",
+  "updated_baseline": "design-baseline-v2",
+  "added_acceptance": "Watchdog tests must verify serviceWatchdog() is invoked during the ProcessGroupManager run cycle."
+}

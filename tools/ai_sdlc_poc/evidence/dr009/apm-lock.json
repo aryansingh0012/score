@@ -1,0 +1,7 @@
+{
+  "lock": "apm.lock.yaml:benchmark-fixture-v1",
+  "version": "apm-context-0.1.0",
+  "digest": "8b9c4108eb8533c281add8623848e3fab12b131b2c369b6eb433adf6fa20c592",
+  "runtime_lockfile": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\apm\\apm.lock.yaml",
+  "runtime_lockfile_sha256": "b8561f5452cd878c961e509d6f04fd566613d929a02a10646a39c51571b4d04e"
+}

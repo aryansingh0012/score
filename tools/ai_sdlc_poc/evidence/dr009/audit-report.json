@@ -1,0 +1,12 @@
+{
+  "name": "apm-audit",
+  "command": [
+    "apm",
+    "audit"
+  ],
+  "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\apm",
+  "status": "ok",
+  "returncode": 0,
+  "stdout": "[>] Scanning installed packages and deployed files...\n\n[*] 1 file(s) scanned -- no issues found\n",
+  "stderr": "[>] Replaying install (cache-only)...\n[+] Replayed 1 package(s)\n[>] Diffing scratch vs working tree...\n[+] No drift detected\n"
+}

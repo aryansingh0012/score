@@ -1,0 +1,158 @@
+{
+  "framework": "harbor",
+  "benchmark": {
+    "issue": "Write unit tests for watchdog in ProcessGroupManager",
+    "ground_truth": "PR #444",
+    "starting_state": "repository state before PR #444"
+  },
+  "execution": {
+    "mode": "live",
+    "live_execute": true
+  },
+  "tools": {
+    "specify": {
+      "version": "0.16.1.dev0",
+      "source": "specify --version"
+    },
+    "apm": {
+      "version": "0.28.0",
+      "source": "apm --version"
+    }
+  },
+  "runtime_lockfile_sha256": "b8561f5452cd878c961e509d6f04fd566613d929a02a10646a39c51571b4d04e",
+  "live_apm_steps": [
+    {
+      "name": "apm-init",
+      "command": [
+        "apm",
+        "init",
+        "-y",
+        "--target",
+        "copilot"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\apm",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "[!] apm.yml already exists\n[i] --yes specified, overwriting apm.yml...\n[i] Targets set: copilot (via --target flag)\n[>] Initializing APM project: apm\n[*] APM project initialized successfully!\n    Created Files     \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 File \u2502 Description \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 *    \u2502 apm.yml     \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500  Next Steps \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 * Install a package:               apm install <owner>/<repo>               \u2502\n\u2502 * Run a script:                    apm run <script>                         \u2502\n\u2502 * Build a plugin? Scaffold one:    apm plugin init                          \u2502\n\u2502 * Publishing a marketplace?:       apm marketplace init                     \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n  Docs: https://microsoft.github.io/apm  |  Star: \nhttps://github.com/microsoft/apm\n",
+      "stderr": ""
+    },
+    {
+      "name": "apm-seed-content",
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\apm",
+      "status": "ok",
+      "path": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\apm\\.apm\\instructions\\score-ai-sdlc.instructions.md"
+    },
+    {
+      "name": "apm-install",
+      "command": [
+        "apm",
+        "install"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\apm",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "[>] Installing dependencies from apm.yml...\n[i] Targets: copilot  (source: apm.yml)\n  [+] <project root> (local)\n  |-- 1 instruction(s) adopted -> .github/instructions/\n  |-- (files unchanged)\n\n[i] No changes -- install state already up to date in 9.1s.\n",
+      "stderr": "WARNING apm_cli.policy.discovery Policy repo eclipse-score/.github-private not found (or [REDACTED] private-repo read scope). If your org publishes policy in .github-private, ensure the token has Contents:read permission on that repo.\n"
+    },
+    {
+      "name": "apm-lock",
+      "command": [
+        "apm",
+        "lock"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\apm",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "[+] Lockfile written to apm.lock.yaml\n",
+      "stderr": "WARNING apm_cli.policy.discovery Policy repo eclipse-score/.github-private not found (or [REDACTED] private-repo read scope). If your org publishes policy in .github-private, ensure the token has Contents:read permission on that repo.\n"
+    },
+    {
+      "name": "apm-compile",
+      "command": [
+        "apm",
+        "compile",
+        "-t",
+        "copilot"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\apm",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "[*] Starting context compilation...\n[i] Targets: copilot  (source: --target flag)\n[i] Compiling for AGENTS.md + .github/copilot-instructions.md + \n.github/prompts/ + .github/agents/ - explicit --target flag\n[i] Instructions already in .github/instructions/ -- omitting from AGENTS.md to\navoid duplicate context\n[i] AGENTS.md not generated (1 file) -- .github/instructions/ already covers \nCopilot; pass --force-instructions to write AGENTS.md\n[!] Compilation completed but produced no output files. Check that target \ndirectories exist (e.g. .github/, .claude/) or set 'target:' in apm.yml / pass \n--target explicitly.\n",
+      "stderr": ""
+    },
+    {
+      "name": "apm-audit",
+      "command": [
+        "apm",
+        "audit"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\apm",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "[>] Scanning installed packages and deployed files...\n\n[*] 1 file(s) scanned -- no issues found\n",
+      "stderr": "[>] Replaying install (cache-only)...\n[+] Replayed 1 package(s)\n[>] Diffing scratch vs working tree...\n[+] No drift detected\n"
+    }
+  ],
+  "live_speckit_steps": [
+    {
+      "name": "speckit-init-check",
+      "command": [
+        "uv",
+        "tool",
+        "run",
+        "--from",
+        "git+https://github.com/github/spec-kit.git@v0.16.1",
+        "specify.exe",
+        "version"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\specify",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557   \u2588\u2588\u2557              \n             \u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u255a\u2588\u2588\u2557 \u2588\u2588\u2554\u255d              \n             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557   \u255a\u2588\u2588\u2588\u2588\u2554\u255d               \n             \u255a\u2550\u2550\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u255d \u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255d    \u255a\u2588\u2588\u2554\u255d                \n             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2551        \u2588\u2588\u2551                 \n             \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d     \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d\u255a\u2550\u255d        \u255a\u2550\u255d                 \n                                                                               \n               GitHub Spec Kit - Spec-Driven Development Toolkit               \n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Specify CLI Information \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                                                                             \u2502\n\u2502     CLI Version    0.16.1                                                   \u2502\n\u2502                                                                             \u2502\n\u2502          Python    3.11.9                                                   \u2502\n\u2502        Platform    Windows                                                  \u2502\n\u2502    Architecture    AMD64                                                    \u2502\n\u2502      OS Version    10.0.26100                                               \u2502\n\u2502                                                                             \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "speckit-check",
+      "command": [
+        "uv",
+        "tool",
+        "run",
+        "--from",
+        "git+https://github.com/github/spec-kit.git@v0.16.1",
+        "specify.exe",
+        "check"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\specify",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557   \u2588\u2588\u2557              \n             \u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u255a\u2588\u2588\u2557 \u2588\u2588\u2554\u255d              \n             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557   \u255a\u2588\u2588\u2588\u2588\u2554\u255d               \n             \u255a\u2550\u2550\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u255d \u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255d    \u255a\u2588\u2588\u2554\u255d                \n             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2551        \u2588\u2588\u2551                 \n             \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d     \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d\u255a\u2550\u255d        \u255a\u2550\u255d                 \n                                                                               \n               GitHub Spec Kit - Spec-Driven Development Toolkit               \n\nChecking for installed tools...\n\nCheck Available Tools\n\u251c\u2500\u2500 \u25cf Antigravity (not found)\n\u251c\u2500\u2500 \u25cf Alquimia AI (not found)\n\u251c\u2500\u2500 \u25cf Amp (not found)\n\u251c\u2500\u2500 \u25cf Auggie CLI (not found)\n\u251c\u2500\u2500 \u25cb IBM Bob (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Claude Code (not found)\n\u251c\u2500\u2500 \u25cb Cline (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf CodeBuddy (not found)\n\u251c\u2500\u2500 \u25cf Codex CLI (not found)\n\u251c\u2500\u2500 \u25cb GitHub Copilot (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cb Cursor (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Devin for Terminal (not found)\n\u251c\u2500\u2500 \u25cf Factory Droid (not found)\n\u251c\u2500\u2500 \u25cb Firebender (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Forge (not found)\n\u251c\u2500\u2500 \u25cf Gemini CLI (not found)\n\u251c\u2500\u2500 \u25cf Goose (not found)\n\u251c\u2500\u2500 \u25cf Grok Build (not found)\n\u251c\u2500\u2500 \u25cf Hermes Agent (not found)\n\u251c\u2500\u2500 \u25cf Junie (not found)\n\u251c\u2500\u2500 \u25cb Kilo Code (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Kimi Code (not found)\n\u251c\u2500\u2500 \u25cf Kiro CLI (not found)\n\u251c\u2500\u2500 \u25cb Lingma (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Oh My Pi (not found)\n\u251c\u2500\u2500 \u25cf opencode (not found)\n\u251c\u2500\u2500 \u25cf Pi Coding Agent (not found)\n\u251c\u2500\u2500 \u25cf Qoder CLI (not found)\n\u251c\u2500\u2500 \u25cf Qwen Code (not found)\n\u251c\u2500\u2500 \u25cf RovoDev ACLI (not found)\n\u251c\u2500\u2500 \u25cf SHAI (not found)\n\u251c\u2500\u2500 \u25cf Tabnine CLI (not found)\n\u251c\u2500\u2500 \u25cb Trae (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Mistral Vibe (not found)\n\u251c\u2500\u2500 \u25cf ZCode (not found)\n\u251c\u2500\u2500 \u25cb Zed (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Visual Studio Code (available)\n\u2514\u2500\u2500 \u25cf Visual Studio Code Insiders (not found)\n\nSpecify CLI is ready to use!\nTip: Install a coding agent for the best experience\nTip: Run 'specify self check' to verify you have the latest CLI version\n",
+      "stderr": ""
+    },
+    {
+      "name": "speckit-workflow-list",
+      "command": [
+        "uv",
+        "tool",
+        "run",
+        "--from",
+        "git+https://github.com/github/spec-kit.git@v0.16.1",
+        "specify.exe",
+        "workflow",
+        "list"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\specify",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "\nInstalled Workflows:\n\n  Full SDD Cycle (speckit) v1.0.0\n    Runs specify \u2192 plan \u2192 tasks \u2192 implement with review gates\n\n",
+      "stderr": ""
+    }
+  ],
+  "requirements_tracking": {
+    "system": "sphinx-needs/ubcode",
+    "id_pattern": "UPPERCASE_WITH_UNDERSCORES (e.g., REQ_001, SPEC_WATCHDOG_RUN)",
+    "linked_need_ids": [],
+    "linked_count": 0,
+    "coverage": "unlinked",
+    "index_hint": "Run ubcode indexing and query against docs needs cache."
+  }
+}

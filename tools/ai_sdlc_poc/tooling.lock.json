@@ -1,0 +1,10 @@
+{
+  "specify": {
+    "version": "0.16.1.dev0",
+    "source": "specify --version"
+  },
+  "apm": {
+    "version": "0.28.0",
+    "source": "apm --version"
+  }
+}

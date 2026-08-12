@@ -1,0 +1,56 @@
+{
+  "steps": [
+    {
+      "name": "speckit-init-check",
+      "command": [
+        "uv",
+        "tool",
+        "run",
+        "--from",
+        "git+https://github.com/github/spec-kit.git@v0.16.1",
+        "specify.exe",
+        "version"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\specify",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557   \u2588\u2588\u2557              \n             \u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u255a\u2588\u2588\u2557 \u2588\u2588\u2554\u255d              \n             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557   \u255a\u2588\u2588\u2588\u2588\u2554\u255d               \n             \u255a\u2550\u2550\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u255d \u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255d    \u255a\u2588\u2588\u2554\u255d                \n             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2551        \u2588\u2588\u2551                 \n             \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d     \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d\u255a\u2550\u255d        \u255a\u2550\u255d                 \n                                                                               \n               GitHub Spec Kit - Spec-Driven Development Toolkit               \n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Specify CLI Information \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                                                                             \u2502\n\u2502     CLI Version    0.16.1                                                   \u2502\n\u2502                                                                             \u2502\n\u2502          Python    3.11.9                                                   \u2502\n\u2502        Platform    Windows                                                  \u2502\n\u2502    Architecture    AMD64                                                    \u2502\n\u2502      OS Version    10.0.26100                                               \u2502\n\u2502                                                                             \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "speckit-check",
+      "command": [
+        "uv",
+        "tool",
+        "run",
+        "--from",
+        "git+https://github.com/github/spec-kit.git@v0.16.1",
+        "specify.exe",
+        "check"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\specify",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557   \u2588\u2588\u2557              \n             \u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u255a\u2588\u2588\u2557 \u2588\u2588\u2554\u255d              \n             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557   \u255a\u2588\u2588\u2588\u2588\u2554\u255d               \n             \u255a\u2550\u2550\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u255d \u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255d    \u255a\u2588\u2588\u2554\u255d                \n             \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2551        \u2588\u2588\u2551                 \n             \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d     \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d\u255a\u2550\u255d        \u255a\u2550\u255d                 \n                                                                               \n               GitHub Spec Kit - Spec-Driven Development Toolkit               \n\nChecking for installed tools...\n\nCheck Available Tools\n\u251c\u2500\u2500 \u25cf Antigravity (not found)\n\u251c\u2500\u2500 \u25cf Alquimia AI (not found)\n\u251c\u2500\u2500 \u25cf Amp (not found)\n\u251c\u2500\u2500 \u25cf Auggie CLI (not found)\n\u251c\u2500\u2500 \u25cb IBM Bob (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Claude Code (not found)\n\u251c\u2500\u2500 \u25cb Cline (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf CodeBuddy (not found)\n\u251c\u2500\u2500 \u25cf Codex CLI (not found)\n\u251c\u2500\u2500 \u25cb GitHub Copilot (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cb Cursor (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Devin for Terminal (not found)\n\u251c\u2500\u2500 \u25cf Factory Droid (not found)\n\u251c\u2500\u2500 \u25cb Firebender (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Forge (not found)\n\u251c\u2500\u2500 \u25cf Gemini CLI (not found)\n\u251c\u2500\u2500 \u25cf Goose (not found)\n\u251c\u2500\u2500 \u25cf Grok Build (not found)\n\u251c\u2500\u2500 \u25cf Hermes Agent (not found)\n\u251c\u2500\u2500 \u25cf Junie (not found)\n\u251c\u2500\u2500 \u25cb Kilo Code (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Kimi Code (not found)\n\u251c\u2500\u2500 \u25cf Kiro CLI (not found)\n\u251c\u2500\u2500 \u25cb Lingma (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Oh My Pi (not found)\n\u251c\u2500\u2500 \u25cf opencode (not found)\n\u251c\u2500\u2500 \u25cf Pi Coding Agent (not found)\n\u251c\u2500\u2500 \u25cf Qoder CLI (not found)\n\u251c\u2500\u2500 \u25cf Qwen Code (not found)\n\u251c\u2500\u2500 \u25cf RovoDev ACLI (not found)\n\u251c\u2500\u2500 \u25cf SHAI (not found)\n\u251c\u2500\u2500 \u25cf Tabnine CLI (not found)\n\u251c\u2500\u2500 \u25cb Trae (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Mistral Vibe (not found)\n\u251c\u2500\u2500 \u25cf ZCode (not found)\n\u251c\u2500\u2500 \u25cb Zed (IDE-based, no CLI check)\n\u251c\u2500\u2500 \u25cf Visual Studio Code (available)\n\u2514\u2500\u2500 \u25cf Visual Studio Code Insiders (not found)\n\nSpecify CLI is ready to use!\nTip: Install a coding agent for the best experience\nTip: Run 'specify self check' to verify you have the latest CLI version\n",
+      "stderr": ""
+    },
+    {
+      "name": "speckit-workflow-list",
+      "command": [
+        "uv",
+        "tool",
+        "run",
+        "--from",
+        "git+https://github.com/github/spec-kit.git@v0.16.1",
+        "specify.exe",
+        "workflow",
+        "list"
+      ],
+      "cwd": "C:\\Users\\40039527\\Documents\\SDV repo\\lifecycle\\tools\\ai_sdlc_poc\\runtime\\specify",
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "\nInstalled Workflows:\n\n  Full SDD Cycle (speckit) v1.0.0\n    Runs specify \u2192 plan \u2192 tasks \u2192 implement with review gates\n\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -25,6 +25,7 @@ For the main feature description and requirements, see the belonging Feature in 
 .. toctree::
    :hidden:
 
+   sdd.rst
    architecture/index.rst
    architecture/chklst_arc_inspection.rst
    safety_analysis/fmea.rst

@@ -1,0 +1,18 @@
+lockfile_version: '1'
+generated_at: '2026-08-12T07:07:06.886164+00:00'
+apm_version: 0.28.0
+dependencies: []
+deployments:
+- kind: project-relative
+  target: copilot
+  value: .github/instructions/score-ai-sdlc.instructions.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:05daebf46213fa70d12816080c507583a883819b26b7f1b9b925b04f44db8251
+local_deployed_files:
+- .github/instructions/score-ai-sdlc.instructions.md
+local_deployed_file_hashes:
+  .github/instructions/score-ai-sdlc.instructions.md: sha256:05daebf46213fa70d12816080c507583a883819b26b7f1b9b925b04f44db8251

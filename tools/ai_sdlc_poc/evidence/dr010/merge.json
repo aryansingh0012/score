@@ -1,0 +1,22 @@
+{
+  "status": "merged",
+  "baseline_id": "design-baseline-v1",
+  "baseline_digest": "b7cf660f5c4f1878fabb2d80edfc0e9010dd7c7cc37d060ba0bc86b2bbb0d3c5",
+  "source_agents": [
+    "agent_a",
+    "agent_b",
+    "agent_c"
+  ],
+  "source_workstreams": [
+    "watchdog mocking interface",
+    "watchdog behavior tests",
+    "Bazel test target integration"
+  ],
+  "merged_artifacts": [
+    "watchdog mocking interface",
+    "design-baseline-v1",
+    "watchdog behavior tests",
+    "Bazel test target integration"
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,114 @@
+{
+  "framework": "harbor",
+  "benchmark": {
+    "issue": "Write unit tests for watchdog in ProcessGroupManager",
+    "ground_truth": "PR #444",
+    "starting_state": "repository state before PR #444"
+  },
+  "apm": {
+    "version": "apm-context-0.1.0",
+    "lock": "apm.lock.yaml:benchmark-fixture-v1",
+    "instructions": "S-CORE governed AI-SDLC instructions",
+    "skills": "SpecKit workflow and lifecycle test skills",
+    "tools": "specify-cli; apm; bazel",
+    "conventions": "S-CORE lifecycle repository conventions",
+    "requirements": "Write unit tests for watchdog in ProcessGroupManager",
+    "digest": "8b9c4108eb8533c281add8623848e3fab12b131b2c369b6eb433adf6fa20c592"
+  },
+  "sequential": {
+    "mode": "sequential",
+    "context_digest": "8b9c4108eb8533c281add8623848e3fab12b131b2c369b6eb433adf6fa20c592",
+    "speckit_artifacts": [
+      "constitution",
+      "specification",
+      "clarification",
+      "plan",
+      "tasks",
+      "analysis",
+      "implementation"
+    ],
+    "lifecycle": [
+      "issue",
+      "specification",
+      "design_baseline_v1",
+      "tasks",
+      "implementation",
+      "tests",
+      "validation"
+    ]
+  },
+  "concurrent": {
+    "baseline": "design-baseline-v1",
+    "agents": [
+      {
+        "agent": "agent_a",
+        "workstream": "watchdog mocking interface",
+        "context_digest": "8b9c4108eb8533c281add8623848e3fab12b131b2c369b6eb433adf6fa20c592",
+        "baseline": "design-baseline-v1",
+        "artifacts": [
+          "watchdog mocking interface",
+          "design-baseline-v1"
+        ]
+      },
+      {
+        "agent": "agent_b",
+        "workstream": "watchdog behavior tests",
+        "context_digest": "8b9c4108eb8533c281add8623848e3fab12b131b2c369b6eb433adf6fa20c592",
+        "baseline": "design-baseline-v1",
+        "artifacts": [
+          "watchdog behavior tests",
+          "design-baseline-v1"
+        ]
+      },
+      {
+        "agent": "agent_c",
+        "workstream": "Bazel test target integration",
+        "context_digest": "8b9c4108eb8533c281add8623848e3fab12b131b2c369b6eb433adf6fa20c592",
+        "baseline": "design-baseline-v1",
+        "artifacts": [
+          "Bazel test target integration",
+          "design-baseline-v1"
+        ]
+      }
+    ],
+    "merge": {
+      "status": "merged",
+      "outputs": [
+        "agent_a",
+        "agent_b",
+        "agent_c"
+      ]
+    }
+  },
+  "impact_analysis": {
+    "requirement_change": "Watchdog tests must verify serviceWatchdog() is invoked during the ProcessGroupManager run cycle.",
+    "status": "conflict",
+    "affected_artifacts": [
+      "specification",
+      "tasks",
+      "agent_b.watchdog_behavior_tests",
+      "design-baseline-v1"
+    ],
+    "replan_required": true
+  },
+  "replan": {
+    "status": "completed",
+    "updated_baseline": "design-baseline-v2",
+    "added_acceptance": "Watchdog tests must verify serviceWatchdog() is invoked during the ProcessGroupManager run cycle."
+  },
+  "validation": {
+    "baseline": "design-baseline-v2",
+    "service_watchdog_run_cycle": true,
+    "status": "passed"
+  },
+  "summary": {
+    "context_hashes_match": true,
+    "concurrent_agents": 3,
+    "impact_detected": true,
+    "validation": "passed"
+  },
+  "execution": {
+    "mode": "offline",
+    "live_execute": false
+  }
+}

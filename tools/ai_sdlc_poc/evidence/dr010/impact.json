@@ -1,0 +1,44 @@
+{
+  "requirement_change": "Watchdog tests must verify serviceWatchdog() is invoked during the ProcessGroupManager run cycle.",
+  "trigger": {
+    "source": "serviceWatchdog()",
+    "location": "ProcessGroupManager.run()",
+    "requirement": "Watchdog tests must verify serviceWatchdog() is invoked during the ProcessGroupManager run cycle.",
+    "status": "triggered",
+    "reason": "The watchdog run-cycle requirement changes the benchmark baseline and invalidates the current Agent B test assumptions."
+  },
+  "status": "conflict",
+  "affected_artifacts": [
+    "specification",
+    "tasks",
+    "agent_b.watchdog_behavior_tests",
+    "design-baseline-v1"
+  ],
+  "artifact_impacts": [
+    {
+      "artifact": "specification",
+      "status": "needs-update",
+      "reason": "The feature spec must capture the serviceWatchdog() run-cycle requirement.",
+      "follow_up": "Revise the spec to make the run-cycle watchdog call explicit."
+    },
+    {
+      "artifact": "tasks",
+      "status": "needs-update",
+      "reason": "The task breakdown must include the watchdog regression work and its validation path.",
+      "follow_up": "Rework the task list to add the new acceptance and validation steps."
+    },
+    {
+      "artifact": "agent_b.watchdog_behavior_tests",
+      "status": "invalidated",
+      "reason": "Agent B tests must assert serviceWatchdog() is called during the run cycle.",
+      "follow_up": "Update the watchdog behavior tests to cover the run-loop invocation."
+    },
+    {
+      "artifact": "design-baseline-v1",
+      "status": "superseded",
+      "reason": "The original baseline does not encode the new watchdog requirement.",
+      "follow_up": "Replan against design-baseline-v2 with the updated acceptance criteria."
+    }
+  ],
+  "replan_required": true
+}
