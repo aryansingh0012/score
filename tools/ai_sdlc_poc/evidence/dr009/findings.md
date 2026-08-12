@@ -75,21 +75,26 @@ block operation.
 
 ### 4. Bazel Compatibility
 
-**Status: PASS (non-interference confirmed)**
+**Status: PASS (non-interference confirmed — live run + static analysis)**
 
-APM writes files into `.github/`, `.apm/`, and `apm_modules/` directories.
-None of these are referenced in any S-CORE Bazel `BUILD` or `MODULE.bazel` file.
-APM requires **zero Bazel configuration changes**.
+Live `bazel build //...` was executed in WSL (Bazel 8.6.0) against the lifecycle repo:
+- **446 targets found, 125 packages loaded, 240 targets configured** — no APM-related errors
+- Build aborted due to a **pre-existing corporate TLS certificate issue** on the evaluation
+  workstation when downloading `gitlab.arm.com/bazel/download_utils`. This failure
+  is unrelated to APM and reproduced on a clean checkout without APM files.
 
-Static analysis confirmed:
-- No Bazel glob() or filegroup() references APM paths
+APM requires **zero Bazel configuration changes**. Confirmed:
+- No Bazel `glob()`, `filegroup()`, or `BUILD` reference to any APM path
 - No `WORKSPACE` or `MODULE.bazel` modification needed
-- No build regressions expected
+- Bazel package loading and target configuration phases completed without APM errors
 
 **Evidence:** `bazel_build.log`
 
-**Recommendation:** Run `bazel build //...` on CI to confirm no regressions
-before merging APM files into the main branch.
+**Issues:** Corporate proxy TLS failure (`PKIX path building failed`) blocks
+`gitlab.arm.com` downloads on this workstation. Pre-existing — see `bazel-ssl-issue.md`.
+
+**Recommendation:** Run `bazel build //...` on official CI (Linux runner with
+proper network access) to confirm full end-to-end pass.
 
 ---
 
